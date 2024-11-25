@@ -9,52 +9,36 @@ const RootLayout = () => {
       <SafeAreaProvider>
         <Stack
           screenOptions={{
-            animation: 'none', // Optional: Disable animations
+            headerShown: false, // Globally hide all headers
+            animation: 'none',  // Optional: Disable animations
           }}
         >
-          {/* Intro screen - FIRST screen */}
-          <Stack.Screen
-            name="intro"   // Ensure this is the first screen
-            options={{
-              headerShown: false, // No header for the intro page
-            }}
-          />
-          
-          {/* Login screen - SECOND screen */}
-          <Stack.Screen
-            name="index"    // Login screen (index.js)
-            options={{
-              headerShown: false, // Hide header for the login page
-            }}
-          />
-          
-          <Stack.Screen
-            name="logIn"   // Ensure this is the first screen
-            options={{
-              headerShown: false, // No header for the intro page
-            }}
-          />
+          {/* Intro screen */}
+          <Stack.Screen name="intro" />
 
-          {/* Other screens */}
+          {/* Login screen */}
+          <Stack.Screen name="logIn" />
+
+          {/* Registration screen */}
           <Stack.Screen
             name="register"
             options={{
-              title: 'Registration',
+              headerShown: false, // Re-enable header for this screen if needed
+              title: 'Registration', 
             }}
           />
+
+          {/* Forgot Password screen */}
           <Stack.Screen
             name="recover"
             options={{
+              headerShown: false, // Re-enable header for this screen if needed
               title: 'Forgot Password?',
             }}
           />
-          <Stack.Screen
-            name="dashboard"
-            options={{
-              title: 'Dashboard',
-              headerShown: false, // Hide header for the dashboard
-            }}
-          />
+
+          {/* Dashboard screen */}
+          <Stack.Screen name="dashboard" />
         </Stack>
       </SafeAreaProvider>
     </PaperProvider>

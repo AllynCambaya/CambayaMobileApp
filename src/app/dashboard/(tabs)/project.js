@@ -2,48 +2,116 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
 
-const Project = () => {
+const Notifications = () => {
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Project Ideas</Text>
+      <Text style={styles.title}>Notifications</Text>
 
-      <View style={styles.projectItem}>
-        <Text style={styles.projectName}>1. MotorSekyo</Text>
-        <Text style={styles.projectDescription}>
-          Maghimo ka ug mobile app nga mag-monitor ug mag-alert sa mga tag-iya sa ilang motor kung kini maligsan o mawala. 
-          Gamiton ang GPS tracking ug alarm system para sa proteksyon sa motor gikan sa kawat.
+      {/* Notification 1 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>lex macasusi</Text>
+          <Icon name="ellipsis-v" size={18} color="#fff" />
+        </View>
+        <Text style={styles.notificationText}>
+          sza pinoy kween KASI NAKA JISULIFE CTFUUUUUUU??????
         </Text>
-        <Text style={styles.projectRate}>Estimated Rate: PHP 35,000 - PHP 55,000</Text>
-        <TouchableOpacity style={styles.applyButton}>
-          <Icon name="check" size={20} color="#fff" />
-          <Text style={styles.applyText}>Apply</Text>
-        </TouchableOpacity>
+        <View style={styles.notificationFooter}>
+          <Icon name="camera" size={20} color="#FF4B5C" />
+        </View>
       </View>
 
-      <View style={styles.projectItem}>
-        <Text style={styles.projectName}>2. CodeRed</Text>
-        <Text style={styles.projectDescription}>
-          Maghimo ka ug app nga mag-connect sa mga nanginahanglan ug dugo ug sa mga available nga blood donors sa ilang lugar. 
-          Gamiton ang geolocation ug profiles aron mas dali makit-an ang mga donors ug recipients.
+      {/* Notification 2 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          Jokic Warmup Before DAL-DEN on ESPN
         </Text>
-        <Text style={styles.projectRate}>Estimated Rate: PHP 20,000 - PHP 40,000</Text>
-        <TouchableOpacity style={styles.applyButton}>
-          <Icon name="check" size={20} color="#fff" />
-          <Text style={styles.applyText}>Apply</Text>
-        </TouchableOpacity>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
       </View>
 
-      <View style={styles.projectItem}>
-        <Text style={styles.projectName}>3. LALONG Navigator</Text>
-        <Text style={styles.projectDescription}>
-          Maghimo ka ug campus map app para sa USTP nga magpakita sa mga building, direksyon, ug updates sa mga kalihokan. 
-          Gamiton ang GPS ug real-time notifications aron matabangan ang mga estudyante.
+      {/* Notification 3 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          Towns Warmup Ahead of NYK-PHX on ESPN
         </Text>
-        <Text style={styles.projectRate}>Estimated Rate: PHP 25,000 - PHP 40,000</Text>
-        <TouchableOpacity style={styles.applyButton}>
-          <Icon name="check" size={20} color="#fff" />
-          <Text style={styles.applyText}>Apply</Text>
-        </TouchableOpacity>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
+      </View>
+
+      {/* Add more notifications similarly */}
+      
+      {/* Notification 4 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          Darius Garland Warmup Before CLE-BOS
+        </Text>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
+      </View>
+
+      {/* Notification 5 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          WEMBY, LEBRON Warm Up!
+        </Text>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
+      </View>
+
+      {/* Notification 6 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>Anime News Network</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          A Letter from the Executive Editor
+        </Text>
+        <View style={styles.notificationFooter}>
+          <Icon name="newspaper-o" size={20} color="#FF4B5C" />
+        </View>
+      </View>
+
+      {/* Notification 7 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          Watch Anthony Edwards Warm Up Ahead of MIN-CHI
+        </Text>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
+      </View>
+
+      {/* Notification 8 */}
+      <View style={styles.notificationItem}>
+        <View style={styles.notificationHeader}>
+          <Text style={styles.username}>NBA is LIVE</Text>
+        </View>
+        <Text style={styles.notificationText}>
+          Watch Steph Curry Warm Up Ahead of GSW-BOS
+        </Text>
+        <View style={styles.notificationFooter}>
+          <Icon name="video-camera" size={20} color="#FF4B5C" />
+        </View>
       </View>
     </ScrollView>
   );
@@ -52,49 +120,41 @@ const Project = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
-    padding: 20,
+    backgroundColor: '#000',
+    padding: 15,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#fff',
     textAlign: 'center',
     marginBottom: 20,
   },
-  projectItem: {
-    marginBottom: 20,
+  notificationItem: {
+    marginBottom: 15,
+    backgroundColor: '#1C1C1C',
+    padding: 15,
+    borderRadius: 8,
   },
-  projectName: {
-    fontSize: 18,
+  notificationHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  username: {
+    fontSize: 16,
+    color: '#FF4B5C', // Bright color for username (similar to the image)
     fontWeight: 'bold',
-    color: '#3e7139',
   },
-  projectDescription: {
-    fontSize: 16,
-    color: '#555',
-    marginVertical: 5,
-    textAlign: 'justify',
+  notificationText: {
+    fontSize: 14,
+    color: '#fff',
+    marginBottom: 5,
   },
-  projectRate: {
-    fontSize: 16,
-    color: '#333',
-    marginTop: 5,
-  },
-  applyButton: {
+  notificationFooter: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#3e7139',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    marginTop: 10,
-  },
-  applyText: {
-    color: '#fff',
-    fontSize: 16,
-    marginLeft: 10,
   },
 });
 
-export default Project;
+export default Notifications;

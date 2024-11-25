@@ -1,86 +1,89 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet, Image } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { useRouter } from 'expo-router';
-import { useFonts, Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 
 const LogInPage = () => {
-  const router = useRouter();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const router = useRouter(); // Router to handle navigation
+  const [email, setEmail] = useState(''); // State for email
+  const [password, setPassword] = useState(''); // State for password
 
+  // Handle Login
   const handleSignIn = () => {
-    if (username && password) {
-      router.push({
-        pathname: 'dashboard',
-        params: { username }, // Pass username as a query param
-      });
+    if (email.trim() && password.trim()) {
+      // Navigate to dashboard if fields are filled
+      router.push('dashboard');
     } else {
-      alert('Please enter your username and password');
+      // Alert if fields are empty
+      alert('Please enter your email and password');
     }
   };
 
-  // Load the Poppins font
-  const [fontsLoaded] = useFonts({
-    Poppins_400Regular,
-    Poppins_600SemiBold,
-  });
-
-  if (!fontsLoaded) {
-    return null; // Optionally show a loading screen while fonts are loading
-  }
-
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Image source={require('../assets/BuyNaBay.png')} style={styles.logo} />
-        <Text style={styles.logoText}>BuyNaBay</Text>
-      </View>
+      {/* Logo */}
+      <Image source={require('../assets/logo2.png')} style={styles.logo} />
 
-      {/* Sign In text below the header */}
-      <Text style={styles.signInText}>Sign In</Text>
+      {/* Login Text */}
+      <Text style={styles.title}>Login</Text>
 
-      <View style={styles.inputContainer}>
-        <Icon name="user" size={20} color="#1B1B41" style={styles.icon} />
-        <TextInput
-          label="Username"
-          mode="outlined"
-          style={styles.input}
-          placeholderTextColor="#6b8f71"
-          value={username}
-          onChangeText={setUsername}
-        />
-      </View>
+      {/* Email Input */}
+      <TextInput
+        label="Email"
+        mode="outlined"
+        style={styles.input}
+        value={email} // Bind value to state
+        onChangeText={(text) => setEmail(text)} // Update state on change
+        outlineColor="#FFF"
+        activeOutlineColor="#FFF"
+        textColor="#FFF"
+        placeholderTextColor="#FFF"
+        autoCapitalize="none" // Disable capitalization
+      />
 
-      <View style={styles.inputContainer}>
-        <Icon name="key" size={20} color="#1B1B41" style={styles.icon} />
-        <TextInput
-          label="Password"
-          mode="outlined"
-          secureTextEntry
-          style={styles.input}
-          placeholderTextColor="#6b8f71"
-          value={password}
-          onChangeText={setPassword}
-        />
-      </View>
+      {/* Password Input */}
+      <TextInput
+        label="Password"
+        mode="outlined"
+        secureTextEntry
+        style={styles.input}
+        value={password} // Bind value to state
+        onChangeText={(text) => setPassword(text)} // Update state on change
+        outlineColor="#FFF"
+        activeOutlineColor="#FFF"
+        textColor="#FFF"
+        placeholderTextColor="#FFF"
+      />
 
-      <Text
-        style={styles.forgotPasswordText}
-        onPress={() => router.push('recover')}
+      {/* Login Button */}
+      <Button
+        mode="contained"
+        style={styles.loginButton}
+        labelStyle={{ color: '#000' }}
+        onPress={handleSignIn} // Trigger login function
       >
-        Forgot Password?
-      </Text>
-
-      <Button mode="contained" onPress={handleSignIn} style={styles.signInButton}>
         Login
       </Button>
 
-      <Text style={styles.signUpText}>
-        DON’T HAVE AN ACCOUNT?{' '}
-        <Text style={styles.signUpLink} onPress={() => router.push('register')}>
-          Sign up
+      {/* Sign Up Link */}
+      <Text style={styles.footerText}>
+        Don't have an account?{' '}
+        <Text
+          style={styles.signUpLink}
+          onPress={() => router.push('register')} // Navigate to Register
+        >
+          Sign Up
+        </Text>
+      </Text>
+
+      {/* Forgot Password Link */}
+      <Text style={styles.footerText}>
+        Forgot Password?{' '}
+        <Text
+          style={styles.signUpLink}
+          onPress={() => router.push('recover')} // Navigate to Recover
+        >
+          Click Here
         </Text>
       </Text>
     </SafeAreaView>
@@ -90,70 +93,40 @@ const LogInPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000', // Black background
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#1b1b41', // Updated background color
-  },
-  header: {
-    flexDirection: 'row', // Row layout for logo and text
-    alignItems: 'center',
-    marginBottom: 20,
+    paddingHorizontal: 20,
   },
   logo: {
-    width: 35, // Adjusted size for better alignment
-    height: 35,
-    resizeMode: 'contain',
-    marginRight: 10, // Space between logo and text
+    width: 100,
+    height: 100,
+    marginBottom: 20,
   },
-  logoText: {
-    fontSize: 20,
-    color: '#FFF', // White color for logo text
-    fontFamily: 'Poppins_600SemiBold', // Apply Poppins font
-  },
-  signInText: {
-    fontSize: 50,
+  title: {
+    fontSize: 28,
     color: '#FFF',
-    fontFamily: 'Poppins_400Regular', // Apply Poppins font
-    marginBottom: 20,
-  },
-  inputContainer: {
-    position: 'relative',
-    width: '100%',
-    marginBottom: 20,
-  },
-  icon: {
-    position: 'absolute',
-    left: 22,
-    top: 20,
-    zIndex: 1,
+    fontWeight: 'bold',
+    marginBottom: 30,
   },
   input: {
-    backgroundColor: '#ffffff',
-    color: '#3e7139',
-    paddingLeft: 40,
-    fontFamily: 'Poppins_400Regular', // Apply Poppins font to input fields
-  },
-  forgotPasswordText: {
-    alignSelf: 'flex-end',
-    color: '#ffffff', // Adjusted to be visible on the dark background
-    marginBottom: 20,
-    fontSize: 14,
-    fontWeight: 'bold',
-    fontFamily: 'Poppins_400Regular', // Apply Poppins font
-  },
-  signInButton: {
     width: '100%',
-    paddingVertical: 10,
-    backgroundColor: '#FDAD00',
+    backgroundColor: '#000', // Match background color
+    marginBottom: 20,
   },
-  signUpText: {
-    marginTop: 20,
+  loginButton: {
+    width: '100%',
+    backgroundColor: '#FFF', // White button with black text
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginBottom: 20,
+  },
+  footerText: {
+    color: '#FFF',
     fontSize: 14,
-    color: '#ffffff', // Adjusted to be visible on the dark background
-    fontFamily: 'Poppins_400Regular', // Apply Poppins font
   },
   signUpLink: {
+    color: '#FFF',
     fontWeight: 'bold',
   },
 });

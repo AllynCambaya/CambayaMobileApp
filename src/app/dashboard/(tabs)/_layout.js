@@ -6,68 +6,86 @@ const DashboardLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: '#6b8f71', // Active tab icon and label color
-        tabBarInactiveTintColor: '#000', // Inactive tab icon and label color
-        tabBarActiveBackgroundColor: '#e0f2f1', // Active background color for tab
-        tabBarInactiveBackgroundColor: '#ffffff', // Inactive background color for tab
-        tabBarLabelStyle: {
-          fontSize: 12, // Adjusted font size for better readability
-        },
+        headerShown: false, // This removes the header for all screens
+        tabBarActiveTintColor: '#1DA1F2', // Active icon color
+        tabBarInactiveTintColor: '#8899A6', // Inactive icon color
         tabBarStyle: {
-          marginBottom: 5,
-          borderRadius: 10,
-          height: 60, // Adjust height for comfort
-          backgroundColor: '#3e7139', // Set the tab container color here
-          borderTopWidth: 2, // Add border outline
-          borderColor: '#6b8f71', // Border color
+          height: 60,
+          backgroundColor: '#000', // Black background for the tab bar
+          borderTopWidth: 0, // No border for a cleaner look
+          elevation: 0, // No shadow
         },
-        tabBarShowLabel: true,
+        tabBarShowLabel: false, // Minimalist design with no labels
       }}
     >
+      {/* Home Screen */}
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ focused }) => (
-            <Icon name="home" size={20} color={focused ? '#6b8f71' : '#000'} />
+            <Icon
+              name="home"
+              size={24}
+              color={focused ? '#1DA1F2' : '#8899A6'}
+            />
           ),
         }}
       />
+      {/* Projects Screen */}
       <Tabs.Screen
         name="project"
         options={{
           title: 'Projects',
           tabBarIcon: ({ focused }) => (
-            <Icon name="folder" size={20} color={focused ? '#6b8f71' : '#000'} />
+            <Icon
+              name="bell"
+              size={24}
+              color={focused ? '#1DA1F2' : '#8899A6'}
+            />
           ),
         }}
       />
+      {/* Add Button */}
       <Tabs.Screen
         name="add"
         options={{
           title: '',
           tabBarIcon: ({ focused }) => (
-            <Icon name="plus" size={30} color={focused ? '#6b8f71' : '#000'} />
+            <Icon
+              name="plus"
+              size={28}
+              color={focused ? '#1DA1F2' : '#8899A6'}
+            />
           ),
           tabBarLabel: '', // Hide label for the add button
         }}
       />
+      {/* Inbox Screen */}
       <Tabs.Screen
         name="inbox"
         options={{
           title: 'Inbox',
           tabBarIcon: ({ focused }) => (
-            <Icon name={focused ? 'envelope' : 'envelope-o'} size={20} color={focused ? '#6b8f71' : '#000'} />
+            <Icon
+              name={focused ? 'envelope' : 'envelope-o'}
+              size={24}
+              color={focused ? '#1DA1F2' : '#8899A6'}
+            />
           ),
         }}
       />
+      {/* Profile Screen */}
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
           tabBarIcon: ({ focused }) => (
-            <Icon name={focused ? 'user' : 'user-o'} size={20} color={focused ? '#6b8f71' : '#000'} />
+            <Icon
+              name={focused ? 'user' : 'user-o'}
+              size={24}
+              color={focused ? '#1DA1F2' : '#8899A6'}
+            />
           ),
         }}
       />

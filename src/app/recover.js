@@ -1,37 +1,80 @@
-// app/recover.js
-import React from 'react';
-import { SafeAreaView, Text, StyleSheet, View, Image } from 'react-native';
+import React, { useState } from 'react';
+import {
+  SafeAreaView,
+  Text,
+  StyleSheet,
+  View,
+  Modal,
+  Pressable,
+  Image,
+} from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Recover = ({ navigation }) => {
+  const [email, setEmail] = useState(''); // Email state
+  const [showDialog, setShowDialog] = useState(false); // Modal visibility state
+
+  const handleSendLink = () => {
+    setShowDialog(true); // Show the success dialog
+  };
+
   return (
     <SafeAreaView style={styles.container}>
+      {/* Logo Section */}
       <View style={styles.logoContainer}>
-        <View style={styles.circleContainer}>
-          <Image source={require('../assets/AppLogo.png')} style={styles.logo} resizeMode="cover" />
-        </View>
+      <Image source={require('../assets/logo2.png')} style={styles.logo} />
       </View>
 
-      <Text style={styles.title}>Recover Password</Text>
+      {/* Title */}
+      <Text style={styles.title}>Password Recovery</Text>
 
-      <Text style={styles.instructionText}>
-        Enter your email address below, and we'll send you a link to reset your password.
+      {/* Input Fields */}
+      <TextInput
+        label="Email"
+        value={email}
+        onChangeText={setEmail}
+        mode="outlined"
+        style={styles.input}
+        keyboardType="email-address"
+      />
+
+      {/* Send Recovery Link Button */}
+      <Button
+        mode="contained"
+        onPress={handleSendLink}
+        style={styles.resetButton}
+        labelStyle={styles.buttonText}
+      >
+        Send Recovery Link
+      </Button>
+
+      {/* Back to Sign Up */}
+      <Text
+        style={styles.backText}
+        onPress={() => navigation.navigate('SignUp')}
+      >
+        Back to Sign Up
       </Text>
 
-      <View style={styles.inputContainer}>
-        <Icon name="envelope" size={20} color="#3e7139" style={styles.icon} />
-        <TextInput
-          label="Email"
-          mode="outlined"
-          style={styles.input}
-          placeholderTextColor="#6b8f71"
-        />
-      </View>
-
-      <Button mode="contained" onPress={() => {}} style={styles.resetButton}>
-        Send Reset Link
-      </Button>
+      {/* Success Dialog */}
+      <Modal
+        transparent={true}
+        visible={showDialog}
+        animationType="slide"
+        onRequestClose={() => setShowDialog(false)} // Close dialog on back press
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalText}>Recovery link sent!</Text>
+            <Pressable
+              style={styles.modalButton}
+              onPress={() => setShowDialog(false)} // Close dialog on button press
+            >
+              <Text style={styles.modalButtonText}>OK</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
@@ -41,64 +84,81 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000000', // Black background
     padding: 20,
-    backgroundColor: '#f0f0f0',
   },
   logoContainer: {
+    marginBottom: 20,
     alignItems: 'center',
-    marginBottom: 50,
   },
   circleContainer: {
     width: 100,
     height: 100,
     borderRadius: 50,
-    justifyContent: 'center',
+    backgroundColor: '#000000',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 5,
-    overflow: 'hidden',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#FFFFFF',
   },
   logo: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    width: 100,
+    height: 100,
+    marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#3e7139',
+    color: '#FFFFFF',
     marginBottom: 20,
-  },
-  instructionText: {
-    textAlign: 'center',
-    fontSize: 16,
-    color: '#3e7139',
-    marginBottom: 30,
-  },
-  inputContainer: {
-    position: 'relative',
-    width: '100%',
-    marginBottom: 20,
-  },
-  icon: {
-    position: 'absolute',
-    left: 22,
-    top: 20,
-    zIndex: 1,
   },
   input: {
-    backgroundColor: '#ffffff',
-    color: '#3e7139',
-    paddingLeft: 40,
+    width: '100%',
+    backgroundColor: '#1c1c1c',
+    color: '#FFFFFF',
+    marginBottom: 15,
   },
   resetButton: {
     width: '100%',
+    backgroundColor: '#FFFFFF',
     paddingVertical: 10,
-    backgroundColor: '#6b8f71',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#000000',
+  },
+  backText: {
+    color: '#FFFFFF',
+    marginTop: 15,
+    textDecorationLine: 'underline',
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+  },
+  modalContainer: {
+    width: '80%',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    padding: 20,
+    alignItems: 'center',
+  },
+  modalText: {
+    fontSize: 18,
+    color: '#000000',
+    marginBottom: 20,
+  },
+  modalButton: {
+    backgroundColor: '#000000',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  modalButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
   },
 });
 
