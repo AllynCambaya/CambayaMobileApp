@@ -4,14 +4,14 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 export default function DrawerLayout() {
   const router = useRouter();
   const year = new Date().getFullYear();
   const { top, bottom } = useSafeAreaInsets();
 
-  // Handle logout action
+ 
   const handleLogout = async () => {
     router.replace('/');
   };
@@ -34,7 +34,7 @@ export default function DrawerLayout() {
                   paddingBottom: 20,
                 }}
               >
-                {/* Avatar container */}
+              
                 <View style={styles.avatarContainer}>
                   <Image source={require('../../assets/AppLogo.png')} style={styles.avatar} />
                 </View>
@@ -67,22 +67,22 @@ export default function DrawerLayout() {
           drawerIcon: () => <Icon name="home" size={25} color="#ffffff" />,
           drawerLabelStyle: styles.drawerLabel,
           headerStyle: {
-            backgroundColor: '#000', // Set header background to black
+            backgroundColor: '#000', 
           },
           headerTitleStyle: {
-            color: '#FFF', // Set header text color to white
+            color: '#FFF', 
           },
-          headerTintColor: '#FFF', // Set hamburger icon color to white
+          headerTintColor: '#FFF', 
         }}
       />
       <Drawer.Screen
         name="settings"
         options={{
           drawerLabel: 'Settings',
-          headerShown: false, // Hides the header
+          headerShown: false, 
           drawerIcon: () => <Icon name="cogs" size={25} color="#ffffff" />,
           drawerLabelStyle: styles.drawerLabel,
-          headerTintColor: '#FFF', // Ensure white tint for the drawer icon
+          headerTintColor: '#FFF', 
         }}
       />
 
@@ -91,7 +91,7 @@ export default function DrawerLayout() {
   );
 }
 
-// Dark theme styles
+
 const styles = StyleSheet.create({
   avatarContainer: {
     width: 150,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333', // Dark background for avatar container
+    backgroundColor: '#333', 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
@@ -115,10 +115,10 @@ const styles = StyleSheet.create({
   },
   drawerLabel: {
     fontSize: 18,
-    color: '#ffffff', // White text for drawer labels
+    color: '#ffffff', 
   },
   footerText: {
-    color: '#b5b5b5', // Light gray text for footer
+    color: '#b5b5b5', 
     fontSize: 14,
   },
 });

@@ -1,24 +1,24 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 const DashboardLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false, // This removes the header for all screens
-        tabBarActiveTintColor: '#1DA1F2', // Active icon color
-        tabBarInactiveTintColor: '#8899A6', // Inactive icon color
+        headerShown: false, 
+        tabBarActiveTintColor: '#1DA1F2', 
+        tabBarInactiveTintColor: '#8899A6',
         tabBarStyle: {
           height: 60,
-          backgroundColor: '#000', // Black background for the tab bar
-          borderTopWidth: 0, // No border for a cleaner look
-          elevation: 0, // No shadow
+          backgroundColor: '#000',
+          borderTopWidth: 0, 
+          elevation: 0, 
         },
-        tabBarShowLabel: false, // Minimalist design with no labels
+        tabBarShowLabel: false, 
       }}
     >
-      {/* Home Screen */}
+    
       <Tabs.Screen
         name="index"
         options={{
@@ -32,7 +32,7 @@ const DashboardLayout = () => {
           ),
         }}
       />
-      {/* Projects Screen */}
+     
       <Tabs.Screen
         name="project"
         options={{
@@ -46,7 +46,7 @@ const DashboardLayout = () => {
           ),
         }}
       />
-      {/* Add Button */}
+   
       <Tabs.Screen
         name="add"
         options={{
@@ -58,10 +58,10 @@ const DashboardLayout = () => {
               color={focused ? '#1DA1F2' : '#8899A6'}
             />
           ),
-          tabBarLabel: '', // Hide label for the add button
+          tabBarLabel: '', 
         }}
       />
-      {/* Inbox Screen */}
+   
       <Tabs.Screen
         name="inbox"
         options={{
@@ -75,7 +75,7 @@ const DashboardLayout = () => {
           ),
         }}
       />
-      {/* Profile Screen */}
+   
       <Tabs.Screen
         name="profile"
         options={{

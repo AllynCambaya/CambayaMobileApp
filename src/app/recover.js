@@ -11,24 +11,24 @@ import {
 import { TextInput, Button } from 'react-native-paper';
 
 const Recover = ({ navigation }) => {
-  const [email, setEmail] = useState(''); // Email state
-  const [showDialog, setShowDialog] = useState(false); // Modal visibility state
+  const [email, setEmail] = useState(''); 
+  const [showDialog, setShowDialog] = useState(false); 
 
   const handleSendLink = () => {
-    setShowDialog(true); // Show the success dialog
+    setShowDialog(true); 
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Logo Section */}
+     
       <View style={styles.logoContainer}>
       <Image source={require('../assets/logo2.png')} style={styles.logo} />
       </View>
 
-      {/* Title */}
+   
       <Text style={styles.title}>Password Recovery</Text>
 
-      {/* Input Fields */}
+  
       <TextInput
         label="Email"
         value={email}
@@ -38,7 +38,7 @@ const Recover = ({ navigation }) => {
         keyboardType="email-address"
       />
 
-      {/* Send Recovery Link Button */}
+  
       <Button
         mode="contained"
         onPress={handleSendLink}
@@ -48,7 +48,7 @@ const Recover = ({ navigation }) => {
         Send Recovery Link
       </Button>
 
-      {/* Back to Sign Up */}
+  
       <Text
         style={styles.backText}
         onPress={() => navigation.navigate('SignUp')}
@@ -56,19 +56,19 @@ const Recover = ({ navigation }) => {
         Back to Sign Up
       </Text>
 
-      {/* Success Dialog */}
+   
       <Modal
         transparent={true}
         visible={showDialog}
         animationType="slide"
-        onRequestClose={() => setShowDialog(false)} // Close dialog on back press
+        onRequestClose={() => setShowDialog(false)} 
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
             <Text style={styles.modalText}>Recovery link sent!</Text>
             <Pressable
               style={styles.modalButton}
-              onPress={() => setShowDialog(false)} // Close dialog on button press
+              onPress={() => setShowDialog(false)} 
             >
               <Text style={styles.modalButtonText}>OK</Text>
             </Pressable>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000000', // Black background
+    backgroundColor: '#000000', 
     padding: 20,
   },
   logoContainer: {

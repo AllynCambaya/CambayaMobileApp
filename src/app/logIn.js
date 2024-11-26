@@ -4,84 +4,84 @@ import { TextInput, Button } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
 const LogInPage = () => {
-  const router = useRouter(); // Router to handle navigation
-  const [email, setEmail] = useState(''); // State for email
-  const [password, setPassword] = useState(''); // State for password
+  const router = useRouter(); 
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState(''); 
 
-  // Handle Login
+ 
   const handleSignIn = () => {
     if (email.trim() && password.trim()) {
-      // Navigate to dashboard if fields are filled
+      
       router.push('dashboard');
     } else {
-      // Alert if fields are empty
+      
       alert('Please enter your email and password');
     }
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Logo */}
+     
       <Image source={require('../assets/logo2.png')} style={styles.logo} />
 
-      {/* Login Text */}
+ 
       <Text style={styles.title}>Login</Text>
 
-      {/* Email Input */}
+     
       <TextInput
         label="Email"
         mode="outlined"
         style={styles.input}
-        value={email} // Bind value to state
-        onChangeText={(text) => setEmail(text)} // Update state on change
+        value={email} 
+        onChangeText={(text) => setEmail(text)} 
         outlineColor="#FFF"
         activeOutlineColor="#FFF"
         textColor="#FFF"
         placeholderTextColor="#FFF"
-        autoCapitalize="none" // Disable capitalization
+        autoCapitalize="none" 
       />
 
-      {/* Password Input */}
+
       <TextInput
         label="Password"
         mode="outlined"
         secureTextEntry
         style={styles.input}
-        value={password} // Bind value to state
-        onChangeText={(text) => setPassword(text)} // Update state on change
+        value={password} 
+        onChangeText={(text) => setPassword(text)} 
         outlineColor="#FFF"
         activeOutlineColor="#FFF"
         textColor="#FFF"
         placeholderTextColor="#FFF"
       />
 
-      {/* Login Button */}
+   
       <Button
         mode="contained"
         style={styles.loginButton}
         labelStyle={{ color: '#000' }}
-        onPress={handleSignIn} // Trigger login function
+        onPress={handleSignIn} 
       >
         Login
       </Button>
 
-      {/* Sign Up Link */}
+   
       <Text style={styles.footerText}>
         Don't have an account?{' '}
         <Text
           style={styles.signUpLink}
-          onPress={() => router.push('register')} // Navigate to Register
+          onPress={() => router.push('register')}
         >
           Sign Up
         </Text>
       </Text>
 
-      {/* Forgot Password Link */}
+    
       <Text style={styles.footerText}>
         Forgot Password?{' '}
         <Text
           style={styles.signUpLink}
-          onPress={() => router.push('recover')} // Navigate to Recover
+          onPress={() => router.push('recover')} 
         >
           Click Here
         </Text>
@@ -93,7 +93,7 @@ const LogInPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000', // Black background
+    backgroundColor: '#000', 
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '100%',
-    backgroundColor: '#000', // Match background color
+    backgroundColor: '#000', 
     marginBottom: 20,
   },
   loginButton: {
     width: '100%',
-    backgroundColor: '#FFF', // White button with black text
+    backgroundColor: '#FFF', 
     paddingVertical: 10,
     borderRadius: 5,
     marginBottom: 20,

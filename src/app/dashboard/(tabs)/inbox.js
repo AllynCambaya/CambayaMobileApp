@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Importing MaterialIcons
+import Icon from 'react-native-vector-icons/MaterialIcons'; 
 
 const Inbox = () => {
-  // List of people and their notification message
+  
   const notifications = [
     { id: '1', name: 'Robert Dobbs', handle: '@iamrobertdobbs', message: 'Sent you a link: The music video for my band\'s new single "Levitation" is now on...', timestamp: '03 Aug 20' },
     { id: '2', name: 'Tala', handle: '@pwsrings', message: 'twitter.com/Neaskycrape/st...', timestamp: '04 Apr 20' },
@@ -31,7 +31,7 @@ const Inbox = () => {
         renderItem={({ item }) => (
           <View style={styles.notificationCard}>
             <View style={styles.userInfo}>
-              <Image source={require('../../../assets/profile1.jpg')} style={styles.profilePic} /> {/* Placeholder image */}
+              <Image source={require('../../../assets/profile1.jpg')} style={styles.profilePic} /> 
               <View style={styles.textContainer}>
                 <Text style={styles.name}>{item.name}</Text>
                 <Text style={styles.handle}>{item.handle}</Text>
@@ -49,13 +49,13 @@ const Inbox = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000', // Dark background for dark mode
+    backgroundColor: '#000', 
     padding: 15,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between', // Align icons and title
+    justifyContent: 'space-between', 
     marginBottom: 20,
   },
   iconContainer: {
@@ -64,12 +64,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#fff', // White title text for contrast
+    color: '#fff', 
     textAlign: 'center',
-    flex: 1, // Make title take up available space between icons
+    flex: 1, 
   },
   notificationCard: {
-    backgroundColor: '#1f1f1f', // Dark card background
+    backgroundColor: '#1f1f1f', 
     borderRadius: 10,
     padding: 15,
     marginBottom: 20,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   profilePic: {
     width: 40,
     height: 40,
-    borderRadius: 20, // Circular profile picture
+    borderRadius: 20, 
     marginRight: 10,
   },
   textContainer: {
@@ -99,16 +99,16 @@ const styles = StyleSheet.create({
   },
   handle: {
     fontSize: 14,
-    color: '#888', // Gray for the handle
+    color: '#888',
   },
   timestamp: {
     fontSize: 12,
-    color: '#888', // Gray for the timestamp
+    color: '#888', 
     marginLeft: 10,
   },
   message: {
     fontSize: 16,
-    color: '#ddd', // Light gray message text
+    color: '#ddd', 
     marginTop: 5,
   },
 });

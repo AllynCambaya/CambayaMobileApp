@@ -5,9 +5,9 @@ import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_700Bold } fr
 
 const IntroScreen = () => {
   const router = useRouter();
-  const [fadeAnim] = useState(new Animated.Value(1)); // Start with full opacity
+  const [fadeAnim] = useState(new Animated.Value(1)); 
 
-  // Load the Poppins font
+
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_600SemiBold,
@@ -15,34 +15,34 @@ const IntroScreen = () => {
   });
 
   useEffect(() => {
-    // Fade-out animation and navigate to login after 3 seconds
+    
     const timer = setTimeout(() => {
       Animated.timing(fadeAnim, {
         toValue: 0,
-        duration: 2000, // 1-second fade-out
+        duration: 2000, 
         useNativeDriver: true,
       }).start();
 
       setTimeout(() => {
-        router.push('logIn'); // Navigate to login
-      }, 1000); // Wait for the fade-out to finish
-    }, 3000); // Initial 3-second delay
+        router.push('logIn'); 
+      }, 1000); 
+    }, 3000); 
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer); 
   }, [fadeAnim, router]);
 
   if (!fontsLoaded) {
-    return null; // Ensure fonts are loaded before rendering
+    return null; 
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Animated.Image
-        source={require('../assets/logo2.png')} // Path to your logo
-        style={[styles.logo, { opacity: fadeAnim }]} // Apply fade animation
+        source={require('../assets/logo2.png')} 
+        style={[styles.logo, { opacity: fadeAnim }]} 
       />
       <Animated.Text style={[styles.title, { opacity: fadeAnim }]}>
-        {/* Add optional text here if needed */}
+       
       </Animated.Text>
     </SafeAreaView>
   );
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000000', // Changed to black
+    backgroundColor: '#000000', 
   },
   logo: {
     width: 150,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 50,
-    color: '#FFF', // Keep text white for contrast against black background
+    color: '#FFF', 
     fontFamily: 'Poppins_700Bold',
   },
 });

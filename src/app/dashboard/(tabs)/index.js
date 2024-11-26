@@ -5,18 +5,18 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Home = () => {
   return (
     <View style={styles.container}>
-      {/* Header */}
+     
       <View style={styles.header}>
         <Image
-          source={require('../../../assets/logo2.png')} // Twitter logo
+          source={require('../../../assets/logo2.png')} 
           style={styles.headerLogo}
           resizeMode="contain"
         />
       </View>
 
-      {/* Feed */}
+    
       <ScrollView style={styles.feed}>
-        {/* Sample Post 1 */}
+    
         <View style={styles.post}>
           <Text style={styles.username}>@soibulma</Text>
           <Text style={styles.content}>
@@ -32,7 +32,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 2 */}
+    
         <View style={styles.post}>
           <Text style={styles.username}>@demonyokajane</Text>
           <Text style={styles.content}>
@@ -48,7 +48,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 3 */}
+      
         <View style={styles.post}>
           <Text style={styles.username}>@user123</Text>
           <Text style={styles.content}>Life is too short to wait for the perfect moment. Just go for it!</Text>
@@ -62,7 +62,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 4 */}
+      
         <View style={styles.post}>
           <Text style={styles.username}>@creativegenius</Text>
           <Text style={styles.content}>Just finished my first digital painting, and I'm so proud of myself! 🎨</Text>
@@ -76,7 +76,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 5 */}
+   
         <View style={styles.post}>
           <Text style={styles.username}>@traveldiaries</Text>
           <Text style={styles.content}>The mountains are calling, and I must go. 🌄</Text>
@@ -90,7 +90,6 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 6 */}
         <View style={styles.post}>
           <Text style={styles.username}>@techguru</Text>
           <Text style={styles.content}>Excited about the new tech launch next week! 🚀</Text>
@@ -104,7 +103,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 7 */}
+   
         <View style={styles.post}>
           <Text style={styles.username}>@foodie</Text>
           <Text style={styles.content}>Breakfast today was heavenly. Pancakes and coffee, anyone? ☕🥞</Text>
@@ -118,7 +117,7 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 8 */}
+  
         <View style={styles.post}>
           <Text style={styles.username}>@bookworm</Text>
           <Text style={styles.content}>Started reading "Atomic Habits" today. Loving it so far! 📚</Text>
@@ -132,7 +131,6 @@ const Home = () => {
           </View>
         </View>
 
-        {/* Sample Post 9 */}
         <View style={styles.post}>
           <Text style={styles.username}>@fitnessfanatic</Text>
           <Text style={styles.content}>Morning workout done! Feeling great and ready to conquer the day! 💪</Text>

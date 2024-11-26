@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 export default function Settings() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Tools and Resources Section */}
+    
       <Text style={styles.sectionLabel}>Tools and Resources</Text>
       <TouchableOpacity style={styles.settingOption}>
         <Icon name="cogs" size={18} color="#ffffff" style={styles.icon} />
@@ -20,7 +20,7 @@ export default function Settings() {
         <Text style={styles.settingText}>Supervision</Text>
       </TouchableOpacity>
 
-      {/* Preferences Section */}
+    
       <Text style={styles.sectionLabel}>Preferences</Text>
       <TouchableOpacity style={styles.settingOption}>
         <Icon name="moon-o" size={18} color="#ffffff" style={styles.icon} />
@@ -39,7 +39,7 @@ export default function Settings() {
         <Text style={styles.settingText}>Accessibility</Text>
       </TouchableOpacity>
 
-      {/* New Settings Section */}
+ 
       <Text style={styles.sectionLabel}>More Settings</Text>
       <TouchableOpacity style={styles.settingOption}>
         <Icon name="cloud" size={18} color="#ffffff" style={styles.icon} />
@@ -86,7 +86,7 @@ export default function Settings() {
         <Text style={styles.settingText}>Reset Settings</Text>
       </TouchableOpacity>
 
-      {/* Legal Policies Section */}
+ 
       <Text style={styles.sectionLabel}>Legal Policies</Text>
       <TouchableOpacity style={styles.settingOption}>
         <Icon name="file" size={18} color="#ffffff" style={styles.icon} />
@@ -99,12 +99,12 @@ export default function Settings() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#000', // Dark background
+    backgroundColor: '#000', 
   },
   sectionLabel: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#ffffff', // White text for section labels
+    color: '#ffffff', 
     marginVertical: 10,
   },
   settingOption: {
@@ -112,12 +112,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#333333', // Darker border
+    borderBottomColor: '#333333', 
   },
   settingText: {
     fontSize: 16,
     marginLeft: 10,
-    color: '#ffffff', // White text for settings
+    color: '#ffffff', 
   },
   icon: {
     marginRight: 10,

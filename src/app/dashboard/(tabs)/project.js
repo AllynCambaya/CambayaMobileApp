@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 const Notifications = () => {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Notifications</Text>
 
-      {/* Notification 1 */}
+    
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>lex macasusi</Text>
@@ -21,7 +21,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 2 */}
+    
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>
@@ -34,7 +34,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 3 */}
+  
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>
@@ -47,9 +47,9 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Add more notifications similarly */}
+     
       
-      {/* Notification 4 */}
+   
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>
@@ -62,7 +62,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 5 */}
+
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>
@@ -75,7 +75,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 6 */}
+
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>Anime News Network</Text>
@@ -88,7 +88,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 7 */}
+    
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>
@@ -101,7 +101,7 @@ const Notifications = () => {
         </View>
       </View>
 
-      {/* Notification 8 */}
+ 
       <View style={styles.notificationItem}>
         <View style={styles.notificationHeader}>
           <Text style={styles.username}>NBA is LIVE</Text>

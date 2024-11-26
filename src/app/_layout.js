@@ -9,35 +9,35 @@ const RootLayout = () => {
       <SafeAreaProvider>
         <Stack
           screenOptions={{
-            headerShown: false, // Globally hide all headers
-            animation: 'none',  // Optional: Disable animations
+            headerShown: false, 
+            animation: 'none', 
           }}
         >
-          {/* Intro screen */}
+     
           <Stack.Screen name="intro" />
 
-          {/* Login screen */}
+
           <Stack.Screen name="logIn" />
 
-          {/* Registration screen */}
+ 
           <Stack.Screen
             name="register"
             options={{
-              headerShown: false, // Re-enable header for this screen if needed
+              headerShown: false, 
               title: 'Registration', 
             }}
           />
 
-          {/* Forgot Password screen */}
+     
           <Stack.Screen
             name="recover"
             options={{
-              headerShown: false, // Re-enable header for this screen if needed
+              headerShown: false, 
               title: 'Forgot Password?',
             }}
           />
 
-          {/* Dashboard screen */}
+    
           <Stack.Screen name="dashboard" />
         </Stack>
       </SafeAreaProvider>

@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome for icons
+import Icon from 'react-native-vector-icons/FontAwesome'; 
 
 const AddPost = () => {
   const [postContent, setPostContent] = useState('');
@@ -12,7 +12,7 @@ const AddPost = () => {
 
   return (
     <View style={styles.container}>
-      {/* Header Section */}
+    
       <View style={styles.header}>
         <Text style={styles.headerText}>Create a New Post</Text>
         <TouchableOpacity style={styles.postButton} onPress={handlePost}>
@@ -20,16 +20,16 @@ const AddPost = () => {
         </TouchableOpacity>
       </View>
 
-      {/* User Profile Section */}
+     
       <View style={styles.profileSection}>
         <Image
-          source={require('../../../assets/profile1.jpg')} // Replace with user's profile image
+          source={require('../../../assets/profile1.jpg')} 
           style={styles.profileImage}
         />
         <Text style={styles.profileName}>Allyn Cambaya</Text>
       </View>
 
-      {/* Post Input Section */}
+    
       <TextInput
         style={styles.input}
         placeholder="Express your thoughts..."
@@ -39,7 +39,7 @@ const AddPost = () => {
         multiline
       />
 
-      {/* Options Section */}
+      
       <View style={styles.optionsSection}>
         <TouchableOpacity style={styles.option}>
           <Icon name="file-text" size={20} color="#fff" />
@@ -73,7 +73,7 @@ const AddPost = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000', // Dark background
+    backgroundColor: '#000000', 
     padding: 20,
   },
   header: {

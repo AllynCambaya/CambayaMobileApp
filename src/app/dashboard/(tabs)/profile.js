@@ -9,7 +9,7 @@ import {
   ScrollView,
   Switch,
 } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons'; // Import the Ionicons library
+import Icon from 'react-native-vector-icons/Ionicons'; 
 
 const Profile = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -25,22 +25,22 @@ const Profile = () => {
   return (
     <SafeAreaView style={[styles.container, themeStyles.container]}>
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-        {/* Profile Picture */}
+      
         <Image
-          source={require("../../../assets/profile.jpg")} // Replace with your image path
+          source={require("../../../assets/profile.jpg")} 
           style={styles.profileImage}
         />
 
-        {/* Name and Email */}
+       
         <Text style={[styles.nameText, themeStyles.text]}>Allyn Cambaya</Text>
         <Text style={[styles.emailText, themeStyles.text]}>allyncambaya2003@gmail.com</Text>
 
-        {/* Edit Profile Button */}
+     
         <TouchableOpacity style={styles.editProfileButton}>
           <Text style={styles.editProfileText}>Edit Profile</Text>
         </TouchableOpacity>
 
-        {/* Follow Requests */}
+     
         <TouchableOpacity style={[styles.sectionButton, themeStyles.card]}>
           <Icon name="people" size={24} color={themeStyles.text.color} />
           <Text style={[styles.sectionText, themeStyles.text]}>Follow Requests</Text>
@@ -49,13 +49,13 @@ const Profile = () => {
           </View>
         </TouchableOpacity>
 
-        {/* Settings Section */}
+      
         <TouchableOpacity style={[styles.sectionButton, themeStyles.card]}>
           <Icon name="settings" size={24} color={themeStyles.text.color} />
           <Text style={[styles.sectionText, themeStyles.text]}>Settings</Text>
         </TouchableOpacity>
 
-        {/* Notification Toggle */}
+      
         <View style={[styles.switchRow, themeStyles.card]}>
           <Icon name="notifications" size={24} color={themeStyles.text.color} />
           <Text style={[styles.switchLabel, themeStyles.text]}>Notifications</Text>
@@ -67,7 +67,7 @@ const Profile = () => {
           />
         </View>
 
-        {/* Dark Mode Toggle */}
+
         <View style={[styles.switchRow, themeStyles.card]}>
           <Icon name="moon" size={24} color={themeStyles.text.color} />
           <Text style={[styles.switchLabel, themeStyles.text]}>Dark Mode</Text>
@@ -79,7 +79,7 @@ const Profile = () => {
           />
         </View>
 
-        {/* PIN Code Toggle */}
+   
         <View style={[styles.switchRow, themeStyles.card]}>
           <Icon name="lock-closed" size={24} color={themeStyles.text.color} />
           <Text style={[styles.switchLabel, themeStyles.text]}>PIN Code</Text>
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   sectionButton: {
     flexDirection: "row",
-    alignItems: "center", // Align icon and text horizontally and centered vertically
+    alignItems: "center", 
     width: "90%",
     paddingVertical: 15,
     paddingHorizontal: 20,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: '#fff',
-    marginLeft: 8, // Reduced margin between icon and text
+    marginLeft: 8, 
   },
   notificationBadge: {
     backgroundColor: "red",
@@ -161,21 +161,21 @@ const styles = StyleSheet.create({
   },
   rightAlign: {
     position: 'absolute',
-    right: 20, // Aligns the badge to the right
+    right: 20, 
   },
   switchRow: {
     flexDirection: "row",
-    alignItems: "center", // Align icon and text horizontally and centered vertically
+    alignItems: "center", 
     width: "90%",
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,
     marginVertical: 10,
-    justifyContent: "space-between", // Ensures switch is aligned to the right
+    justifyContent: "space-between", 
   },
   switchLabel: {
     fontSize: 16,
-    marginLeft: 8, // Reduced margin between icon and text
+    marginLeft: 8, 
   },
   logoutButton: {
     backgroundColor: "red",
@@ -185,14 +185,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: "90%",
     alignItems: "center",
-    flexDirection: "row", // Align icon and text horizontally
+    flexDirection: "row", 
     justifyContent: "center",
   },
   logoutText: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 16,
-    marginLeft: 8, // Reduced margin between icon and text
+    marginLeft: 8, 
   },
 });
 
@@ -214,13 +214,13 @@ const lightThemeStyles = StyleSheet.create({
 
 const darkThemeStyles = StyleSheet.create({
   container: {
-    backgroundColor: "#000", // Black background for dark mode
+    backgroundColor: "#000", 
   },
   text: {
-    color: "#fff", // White text color for dark mode
+    color: "#fff", 
   },
   card: {
-    backgroundColor: "#333", // Darker card background to contrast with black
+    backgroundColor: "#333", 
     shadowColor: "#000",
     shadowOpacity: 0.5,
     shadowRadius: 4,

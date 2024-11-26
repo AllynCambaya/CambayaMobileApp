@@ -16,25 +16,25 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [showDialog, setShowDialog] = useState(false); // Modal visibility state
+  const [showDialog, setShowDialog] = useState(false); 
 
-  // Function to handle sign-up
+ 
   const handleSignUp = () => {
-    // You can add validation logic here (e.g., check if passwords match, fields are filled)
-    setShowDialog(true); // Show the success dialog
+   
+    setShowDialog(true); 
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Logo Section */}
+     
       <View style={styles.logoContainer}>
       <Image source={require('../assets/logo2.png')} style={styles.logo} />
       </View>
 
-      {/* Title */}
+      
       <Text style={styles.title}>Sign Up</Text>
 
-      {/* Input Fields */}
+      
       <TextInput
         label="First Name"
         value={firstName}
@@ -74,7 +74,7 @@ const Register = () => {
         style={styles.input}
       />
 
-      {/* Sign-Up Button */}
+      
       <Button
         mode="contained"
         onPress={handleSignUp}
@@ -84,7 +84,7 @@ const Register = () => {
         Sign Up
       </Button>
 
-      {/* Forgot Password */}
+  
       <Text
         style={styles.forgotPassword}
         onPress={() => console.log('Navigate to Forgot Password')}
@@ -92,19 +92,19 @@ const Register = () => {
         Forgot your password? Click Here
       </Text>
 
-      {/* Success Dialog */}
+    
       <Modal
         transparent={true}
         visible={showDialog}
         animationType="slide"
-        onRequestClose={() => setShowDialog(false)} // Close dialog on back press
+        onRequestClose={() => setShowDialog(false)} 
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
             <Text style={styles.modalText}>Account created successfully!</Text>
             <Pressable
               style={styles.modalButton}
-              onPress={() => setShowDialog(false)} // Close dialog on button press
+              onPress={() => setShowDialog(false)}
             >
               <Text style={styles.modalButtonText}>OK</Text>
             </Pressable>
@@ -118,7 +118,7 @@ const Register = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000', // Black background
+    backgroundColor: '#000000', 
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
@@ -133,23 +133,23 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    color: '#FFFFFF', // White text
+    color: '#FFFFFF', 
     fontWeight: 'bold',
     marginBottom: 20,
   },
   input: {
     width: '100%',
-    backgroundColor: '#1c1c1c', // Dark background for inputs
+    backgroundColor: '#1c1c1c', 
     marginBottom: 15,
-    color: '#FFFFFF', // White text
+    color: '#FFFFFF', 
   },
   signUpButton: {
-    backgroundColor: '#FFFFFF', // White button
+    backgroundColor: '#FFFFFF', 
     width: '100%',
     marginTop: 20,
   },
   buttonText: {
-    color: '#000000', // Black text for button
+    color: '#000000', 
   },
   forgotPassword: {
     color: '#FFFFFF',
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
   },
   modalContainer: {
     width: '80%',
