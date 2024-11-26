@@ -59,30 +59,33 @@ export default function DrawerLayout() {
           </View>
         )}
       >
-        <Drawer.Screen
-          name="(tabs)"
-          options={{
-            drawerLabel: 'Home',
-            title: 'LinKings',
-            drawerIcon: () => <Icon name="home" size={25} color="#ffffff" />,
-            drawerLabelStyle: styles.drawerLabel,
-            headerStyle: {
-              backgroundColor: '#000', // Set header background to black
-            },
-            headerTitleStyle: {
-              color: '#FFF', // Set header text color to white
-            },
-          }}
-        />
-        <Drawer.Screen
-          name="settings"
-          options={{
-            drawerLabel: 'Settings',
-            headerShown: false, // Hides the header
-            drawerIcon: () => <Icon name="cogs" size={25} color="#ffffff" />,
-            drawerLabelStyle: styles.drawerLabel,
-          }}
-        />
+      <Drawer.Screen
+        name="(tabs)"
+        options={{
+          drawerLabel: 'Home',
+          title: 'LinKings',
+          drawerIcon: () => <Icon name="home" size={25} color="#ffffff" />,
+          drawerLabelStyle: styles.drawerLabel,
+          headerStyle: {
+            backgroundColor: '#000', // Set header background to black
+          },
+          headerTitleStyle: {
+            color: '#FFF', // Set header text color to white
+          },
+          headerTintColor: '#FFF', // Set hamburger icon color to white
+        }}
+      />
+      <Drawer.Screen
+        name="settings"
+        options={{
+          drawerLabel: 'Settings',
+          headerShown: false, // Hides the header
+          drawerIcon: () => <Icon name="cogs" size={25} color="#ffffff" />,
+          drawerLabelStyle: styles.drawerLabel,
+          headerTintColor: '#FFF', // Ensure white tint for the drawer icon
+        }}
+      />
+
       </Drawer>
     </GestureHandlerRootView>
   );

@@ -1,69 +1,69 @@
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
+import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome for icons
 
-const Add = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [rate, setRate] = useState('');
+const AddPost = () => {
+  const [postContent, setPostContent] = useState('');
 
   const handlePost = () => {
-    // Handle the post logic (e.g., storing the project details)
-    console.log('Project Posted:', { title, description, rate });
-    // Reset fields after posting
-    setTitle('');
-    setDescription('');
-    setRate('');
-  };
-
-  const handleSaveDraft = () => {
-    // Handle saving the draft logic
-    console.log('Project Saved as Draft:', { title, description, rate });
-    // Reset fields after saving as draft
-    setTitle('');
-    setDescription('');
-    setRate('');
+    console.log('Post Content:', postContent);
+    setPostContent('');
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Add Project Idea</Text>
+      {/* Header Section */}
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Create a New Post</Text>
+        <TouchableOpacity style={styles.postButton} onPress={handlePost}>
+          <Text style={styles.postButtonText}>Post</Text>
+        </TouchableOpacity>
+      </View>
 
-      <Text style={styles.label}>Project Title</Text>
+      {/* User Profile Section */}
+      <View style={styles.profileSection}>
+        <Image
+          source={require('../../../assets/profile1.jpg')} // Replace with user's profile image
+          style={styles.profileImage}
+        />
+        <Text style={styles.profileName}>Allyn Cambaya</Text>
+      </View>
+
+      {/* Post Input Section */}
       <TextInput
         style={styles.input}
-        placeholder="Enter project title"
-        value={title}
-        onChangeText={setTitle}
-      />
-
-      <Text style={styles.label}>Project Description</Text>
-      <TextInput
-        style={[styles.input, styles.textArea]}
-        placeholder="Enter project description"
-        value={description}
-        onChangeText={setDescription}
+        placeholder="Express your thoughts..."
+        placeholderTextColor="#aaa"
+        value={postContent}
+        onChangeText={setPostContent}
         multiline
       />
 
-      <Text style={styles.label}>Estimated Rate</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter estimated rate"
-        value={rate}
-        onChangeText={setRate}
-        keyboardType="numeric"
-      />
-
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.postButton} onPress={handlePost}>
-          <Icon name="check" size={15} color="#fff" />
-          <Text style={styles.postText}>Publish</Text>
+      {/* Options Section */}
+      <View style={styles.optionsSection}>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="file-text" size={20} color="#fff" />
+          <Text style={styles.optionText}>Blocos notes</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.draftButton} onPress={handleSaveDraft}>
-          <Icon name="save" size={15} color="#fff" />
-          <Text style={styles.draftText}>Save as Draft</Text>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="font" size={20} color="#fff" />
+          <Text style={styles.optionText}>Text</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="camera" size={20} color="#fff" />
+          <Text style={styles.optionText}>Photo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="video-camera" size={20} color="#fff" />
+          <Text style={styles.optionText}>Video</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="bar-chart" size={20} color="#fff" />
+          <Text style={styles.optionText}>Poll</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option}>
+          <Icon name="link" size={20} color="#fff" />
+          <Text style={styles.optionText}>Link</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -73,67 +73,72 @@ const Add = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#000000', // Dark background
     padding: 20,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#00',
-    textAlign: 'center',
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 20,
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 5,
-  },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingLeft: 10,
-    marginBottom: 15,
-    backgroundColor: '#fff',
-  },
-  textArea: {
-    height: 100,
-    textAlignVertical: 'top',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
+  headerText: {
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold',
   },
   postButton: {
+    backgroundColor: '#FFFF',
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+  },
+  postButtonText: {
+    color: '#000000',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  profileSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#3e7139',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 8,
-    marginRight: 10, // Add spacing between buttons
+    marginBottom: 15,
   },
-  draftButton: {
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 10,
+  },
+  profileName: {
+    fontSize: 16,
+    color: '#fff',
+  },
+  input: {
+    backgroundColor: '#1f1f1f',
+    color: '#fff',
+    borderRadius: 8,
+    padding: 20,
+    marginBottom: 30,
+    textAlignVertical: 'top',
+    fontSize: 14,
+    height: 150,
+  },
+  optionsSection: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  option: {
     alignItems: 'center',
-    backgroundColor: '#8a8a8a', // Grey color for save as draft button
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 8,
+    marginBottom: 30,
+    width: '30%',
   },
-  postText: {
+  optionText: {
     color: '#fff',
-    fontSize: 14,
-    marginLeft: 8,
-  },
-  draftText: {
-    color: '#fff',
-    fontSize: 14,
-    marginLeft: 8,
+    fontSize: 12,
+    marginTop: 5,
+    textAlign: 'center',
   },
 });
 
-export default Add;
+export default AddPost;
